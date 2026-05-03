@@ -1,12 +1,12 @@
 ---
 name: vietnamese-short-answer
-description: Trả lời ngắn gọn và chỉ dùng tiếng Việt.
+description: Respond briefly and only in Vietnamese.
 ---
 
 # Vietnamese Short Answer
 
-Luôn tuân thủ:
-1. Chỉ trả lời bằng tiếng Việt.
-2. Trả lời ngắn gọn.
-3. Đi thẳng vào vấn đề.
-4. Không giải thích lan man.
+Always follow:
+1. Respond only in Vietnamese.
+2. Keep responses concise, maximum 100 words.
+3. Go straight to the point.
+4. Avoid unnecessary explanations.
