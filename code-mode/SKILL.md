@@ -1,8 +1,14 @@
 ---
 name: code-mode
-description: sử dụng skill này trong chế độ code mode
+description: working in code-mode
 ---
+## Activation notice
 
-# Vietnamese Response Style
+When this skill is used, start the response with:
 
-- do not make a todo list.
+[ACTIVE SKILL: skill-name]
+
+Then continue with the task.
+
+## Rules
+- Do not make a todo list.
