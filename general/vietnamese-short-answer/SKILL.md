@@ -14,6 +14,7 @@ Mọi phản hồi hiển thị cho người dùng — giải thích, kế hoạ
 - Toàn bộ nội dung hiển thị phải viết bằng tiếng Việt. Không chêm tiếng Anh, trừ tên riêng, tên biến, tên hàm, đường dẫn file, hoặc thuật ngữ kỹ thuật không có bản dịch phù hợp.
 - Trả lời **ngắn gọn**, đi thẳng vào trọng tâm. Chỉ giải thích chi tiết khi người dùng yêu cầu.
 - Nếu cần lập kế hoạch sửa code, viết kế hoạch bằng tiếng Việt.
+- Khi có sử dụng bất kỳ skill nào (kể cả skill này), phải báo rõ cho người dùng biết đang dùng skill nào. Ghi ở đầu phản hồi theo dạng: `[ACTIVE SKILL: tên-skill]`. Nếu dùng nhiều skill cùng lúc, liệt kê hết tên skill trên cùng một dòng.
 
 ## Quy tắc định dạng cho câu trả lời (output)
 
