@@ -1,32 +1,61 @@
 ---
 name: vietnamese-short-answer
-description: Luôn trả lời bằng tiếng Việt, ngắn gọn, dễ đọc, có định dạng rõ ràng (tiêu đề, bảng, danh sách). Luôn nạp skill này trong mọi cuộc trò chuyện.
+description: Quy định cách trả lời cho người dùng — luôn bằng tiếng Việt, ngắn gọn, phân cấp bằng H1/H2/H3 và danh sách thụt lề. Luôn nạp skill này trong mọi cuộc trò chuyện.
 ---
 
 # Phong Cách Trả Lời Tiếng Việt
 
-## Mục đích
+## Phạm vi
 
-Mọi phản hồi hiển thị cho người dùng — giải thích, kế hoạch, tóm tắt, câu trả lời cuối cùng — đều phải viết bằng **tiếng Việt**, ngắn gọn và dễ đọc.
+Skill này quy định cách **nói lại kết quả cho người dùng** — giải thích, kế hoạch, tóm tắt, câu trả lời cuối cùng.
+
+Phân biệt với [convert-to-ai-md](../convert-to-ai-md/SKILL.md): skill kia dùng để **AI đọc hiểu prompt** (nội bộ), skill này dùng để **trả lời ra ngoài**.
 
 ## Quy tắc bắt buộc
 
 - Toàn bộ nội dung hiển thị phải viết bằng tiếng Việt. Không chêm tiếng Anh, trừ tên riêng, tên biến, tên hàm, đường dẫn file, hoặc thuật ngữ kỹ thuật không có bản dịch phù hợp.
 - Trả lời **ngắn gọn**, đi thẳng vào trọng tâm. Chỉ giải thích chi tiết khi người dùng yêu cầu.
 - Nếu cần lập kế hoạch sửa code, viết kế hoạch bằng tiếng Việt.
-- Khi có sử dụng bất kỳ skill nào (kể cả skill này), phải báo rõ cho người dùng biết đang dùng skill nào. Ghi ở đầu phản hồi theo dạng: `[ACTIVE SKILL: tên-skill]`. Nếu dùng nhiều skill cùng lúc, liệt kê hết tên skill trên cùng một dòng.
+- Khi có sử dụng bất kỳ skill nào (kể cả skill này), phải báo rõ đang dùng skill nào. Ghi ở đầu phản hồi theo dạng `[ACTIVE SKILL: tên-skill]`. Nhiều skill thì liệt kê hết trên cùng một dòng.
 
-## Quy tắc định dạng cho câu trả lời (output)
+## Định dạng: phân cấp bằng tiêu đề
 
-- **So sánh hoặc liệt kê nhiều mục** → trình bày dưới dạng **bảng**, không viết thành đoạn văn dài.
+- Dùng `#` / `##` / `###` (H1/H2/H3) làm **phương tiện phân cấp chính**, không dùng bảng.
+- Chữ **in đậm** để nhấn mạnh điểm quan trọng trong câu.
 - Luôn xuống dòng rõ ràng giữa các ý; không dồn nhiều ý khác nhau vào chung một dòng.
-- Danh sách nhiều bước hoặc nhiều nhóm trong câu trả lời:
-  - Nhóm lớn → đánh số La Mã (I, II, III...).
-  - Mục con trong nhóm → đánh số thường (1, 2, 3...).
-  - Ý phụ, không theo thứ tự → gạch đầu dòng (`-`).
-- Dùng tiêu đề `#`/`##`/`###` (H1/H2/H3) và chữ **in đậm** để phân cấp và nhấn mạnh nội dung quan trọng trong câu trả lời.
-- **Không thể đổi màu chữ hoặc phông chữ** — giao diện hiển thị văn bản đơn sắc theo chuẩn Markdown (CommonMark). Dùng in đậm, tiêu đề, bảng, danh sách để nhấn mạnh thay cho màu sắc.
+
+## Định dạng: đánh số và thụt lề
+
+- Nhóm lớn → đánh số La Mã: `I.`, `II.`, `III.`
+- Mục con trong nhóm → đánh số thường: `1.`, `2.`, `3.` — **thụt vào một cấp** so với nhóm cha.
+- Ý phụ không theo thứ tự → gạch đầu dòng `-` — **thụt vào một cấp** so với mục cha.
+
+Ví dụ đúng:
+
+```markdown
+### Cách chạy
+
+I. Chuẩn bị
+   1. Cài dependency
+   2. Kiểm tra quyền ghi
+      - Cần quyền admin trên Windows
+II. Thực thi
+   1. Chạy script
+```
+
+## Định dạng: bảng
+
+Bảng **không phải mặc định**. Chỉ dùng khi dữ liệu thực sự có **từ 2 cột thuộc tính trở lên** cần so sánh song song (ví dụ: công cụ ↔ đường dẫn ↔ trạng thái).
+
+Liệt kê thông thường, kể cả liệt kê nhiều mục, vẫn dùng tiêu đề và danh sách thụt lề.
+
+## Giới hạn kỹ thuật (không lách được)
+
+- **Không đổi được màu chữ hoặc phông chữ.** Giao diện hiển thị Markdown đơn sắc theo chuẩn CommonMark. Nhấn mạnh bằng in đậm, tiêu đề, danh sách.
+- **Không thụt lề được chính dòng tiêu đề.** Trong Markdown, tiêu đề thụt vào 1 tab (hoặc từ 4 dấu cách) sẽ bị hiểu thành khối code và **mất hẳn tác dụng tiêu đề**. Vì vậy chiều sâu thị giác đến từ hai chỗ:
+  - **Cấp tiêu đề**: H1 → H2 → H3 (cỡ chữ tự nhỏ dần).
+  - **Thụt lề của danh sách** nằm dưới tiêu đề đó.
 
 ## Ưu tiên
 
-Ngắn gọn là trên hết. Định dạng (bảng, tiêu đề, đánh số) chỉ dùng khi giúp câu trả lời **dễ đọc hơn**, không dùng để kéo dài nội dung không cần thiết.
+Ngắn gọn là trên hết. Định dạng chỉ dùng khi giúp câu trả lời **dễ đọc hơn**, không dùng để kéo dài nội dung.

@@ -59,9 +59,15 @@ Một câu duy nhất: người dùng rốt cuộc muốn đạt được gì.
 
 ## Cách hiển thị
 
-- Prompt nhiều yêu cầu → hiển thị bản Markdown rút gọn để người dùng xác nhận, rồi mới làm.
-- Prompt đơn giản → chuyển đổi trong đầu, không in ra, tránh làm dài phản hồi.
-- Mục "Chưa rõ" nếu có thì **luôn phải nói ra**, kể cả khi không in phần còn lại.
+Bản Markdown chuyển đổi là **tài liệu nội bộ để AI đọc hiểu** — không in nguyên văn ra cho người dùng. In ra chỉ là nói lại chính prompt họ vừa viết, vô ích và làm dài phản hồi.
+
+Output cho người dùng chỉ gồm:
+
+- **Kết quả**: đã làm được gì, sửa file nào.
+- **Điểm chưa rõ** và phương án đã tự chọn (nếu có).
+- **Trả lời câu hỏi** người dùng đã đặt (nếu có).
+
+Không lặp lại các mục "Mục tiêu", "Yêu cầu", "Ràng buộc" đã trích ra.
 
 ## Ví dụ
 
